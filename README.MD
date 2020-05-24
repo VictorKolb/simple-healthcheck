@@ -1,4 +1,4 @@
-#HealthCheck
+# HealthCheck
 Simple node-js healthcheck with alert to telegram messenger.
 ## Requirements
 * Node js
@@ -8,7 +8,7 @@ Simple node-js healthcheck with alert to telegram messenger.
 
 Don't forget press 'Start' in bot dialog to accept for bot messages.
 
-##Setup
+## Setup
 * Clone the repository
 * In `src/config.js` set `targets` array, bot `token`, your `userId` and `timeInterval`:
 ```javascript
@@ -32,11 +32,11 @@ module.exports = {
 ```
 * Run it with `docker-compose up --build`
 
-##FAQ
-###Time interval
+## FAQ
+### Time interval
 For change time interval check [node-schedule readme](https://github.com/node-schedule/node-schedule#cron-style-scheduling)
 
-###Healthcheck route
+### Healthcheck route
 You can use any working url. I use something like this:
 ```javascript
 import express from "express";
