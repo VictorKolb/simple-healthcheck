@@ -7,6 +7,7 @@ const { token, targets, timeInterval, userId } = config;
 function check() {
   targets.forEach(async (target) => {
     const { url, name } = target;
+
     try {
       const { data } = await axios.get(url);
       console.info(`Check server ${name}`);
@@ -19,13 +20,14 @@ function check() {
 }
 
 async function sendAlert(target) {
-  const { name, ip } = target;
+  const { name, ip, url } = target;
+
   try {
     const bot = new TelegramBot(token, {});
 
     await bot.sendMessage(
       userId,
-      `Looks like server ${name} on IP ${ip} is down.`,
+      `Looks like server ${name} on IP ${ip} is down. Healthcheck url: ${url}`,
     );
   } catch (err) {
     console.error(err);
