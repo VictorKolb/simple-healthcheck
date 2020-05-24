@@ -30,7 +30,7 @@ module.exports = {
   ],
 };
 ```
-* Run it with `docker-compose up --build`
+* Run it with `docker-compose up --build -d`
 
 ## FAQ
 ### Time interval
