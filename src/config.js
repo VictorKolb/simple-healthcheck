@@ -1,7 +1,7 @@
 module.exports = {
   token: "bot token",
   timeInterval: "0 * * * * *",
-  userId: "user id",
+  userId: "user id number or array",
   targets: [
     {
       url: "https://example.com/healthcheck",

@@ -24,11 +24,13 @@ async function sendAlert(target) {
 
   try {
     const bot = new TelegramBot(token, {});
+    const message = `Looks like server ${name} on IP ${ip} is down. Healthcheck url: ${url}`;
 
-    await bot.sendMessage(
-      userId,
-      `Looks like server ${name} on IP ${ip} is down. Healthcheck url: ${url}`,
-    );
+    if (typeof userId === "number") {
+      await bot.sendMessage(userId, message);
+    } else {
+      userId.forEach((id) => bot.sendMessage(id, message));
+    }
   } catch (err) {
     console.error(err);
   }
